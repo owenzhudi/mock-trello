@@ -1,12 +1,13 @@
 import React from 'react';
 import Card from '../Card';
-import APPLIED from '../../constants/status';
+import { APPLIED } from '../../constants/status';
+import './Column.css';
 
 const Column = props => {
   const { status, candidates } = props;
 
   return (
-    <div>
+    <div className="column">
       <div>{status}</div>
       <div>
         {candidates.map(candidate => {

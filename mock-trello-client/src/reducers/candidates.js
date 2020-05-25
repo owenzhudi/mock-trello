@@ -31,6 +31,8 @@ const candidates = (state = initialState, action) => {
         loading: false,
         error: action.payload.error
       }
+    default:
+      return state;
   }
 };
 
