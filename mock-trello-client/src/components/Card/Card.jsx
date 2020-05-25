@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Card = props => {
-  const { candidate } = props;
+  const { name, phone, email, comment } = props;
+  const [dragging, setDragging] = useState(false);
 
   return (
-    <div>
-      <div>Name: {candidate.name}</div>
-      <div>Phone: {candidate.phone}</div>
-      <div>Email: {candidate.email}</div>
+    <div draggable>
+      <div>Name: {name}</div>
+      <div>Phone: {phone}</div>
+      <div>Email: {email}</div>
+      <div>Comment: {comment}</div>
     </div>
   );
 };
