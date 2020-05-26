@@ -16,9 +16,20 @@ import './Board.css';
 const STATUS = [APPLIED, PHONE_SCREEN, ON_SITE, OFFERED, ACCEPTED, REJECTED];
 
 class Board extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      draggingId: null
+    };
+  }
+
   componentDidMount() {
     this.props.getAllCandidates();
   }
+
+  onDrag = (_id) => {
+    this.setState({ draggingId: _id });
+  };
 
   render() {
     const { candidates } = this.props;
@@ -33,6 +44,8 @@ class Board extends Component {
                 key={status}
                 status={status}
                 candidates={filteredCandidates}
+                draggingId={this.state.draggingId}
+                onDrag={this.onDrag}
               />
             );
           })}

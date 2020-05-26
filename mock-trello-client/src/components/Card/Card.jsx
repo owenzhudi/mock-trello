@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import './Card.css';
 
 const Card = props => {
-  const { name, phone, email, comment } = props;
+  const { name, phone, email, comment, onDrag } = props;
   const [dragging, setDragging] = useState(false);
 
   return (
     <div
       className="card"
       draggable
+      onDrag={onDrag}
     >
       <div>Name: {name}</div>
       <div>Phone: {phone}</div>
