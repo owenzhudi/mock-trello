@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 import Card from '../Card';
 import { updateCandidateStatus } from '../../actions/candidates';
 import { APPLIED } from '../../constants/status';
@@ -23,7 +24,7 @@ const Column = props => {
       onDragOver={onDragOver}
       onDrop={onDrop}
     >
-      <div>{status}</div>
+      <div className="column-status">{status}</div>
       <div>
         {candidates.map(candidate => {
           return (
@@ -36,9 +37,9 @@ const Column = props => {
         })}
       </div>
       {status === APPLIED && (
-        <div>
+        <Link to="/new-candidate">
           Add candidate
-        </div>
+        </Link>
       )}
     </div>
   );

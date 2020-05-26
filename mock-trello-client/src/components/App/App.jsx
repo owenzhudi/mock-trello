@@ -1,13 +1,17 @@
 import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Board from '../Board';
-import logo from '../../logo.svg';
+import NewCandidate from '../NewCandidate';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Board />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/board" component={Board} />
+        <Route path="/new-candidate" component={NewCandidate} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 

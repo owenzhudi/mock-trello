@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Card.css';
 
 const Card = props => {
   const { name, phone, email, comment, onDrag } = props;
-  const [dragging, setDragging] = useState(false);
 
   return (
     <div

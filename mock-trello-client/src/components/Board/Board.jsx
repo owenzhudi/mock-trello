@@ -35,7 +35,7 @@ class Board extends Component {
     const { candidates } = this.props;
     return (
       <div className="board">
-        <div>Mock trello</div>
+        <h1 className="header">Mock trello</h1>
         <div className="status-container">
           {STATUS.map((status, index) => {
             const filteredCandidates = candidates.filter(candidate => candidate.status === status);
